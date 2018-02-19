@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
 
 class PostController extends Controller
 {
@@ -13,8 +14,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $post = Post::latest()->paginate(5);
+        return view('posts.index', compact('posts'))->with('i', (request()->input('page', 1) -1) *5);
+    } 
 
     /**
      * Show the form for creating a new resource.
