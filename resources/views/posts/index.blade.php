@@ -49,7 +49,7 @@
 				<a class="btn btn-xs btn-primary" href="{{ url('posts.edit'), $post->id }}">Edit</a>
 
 				{!! Form::open(['method'=> 'DELETE', 'url' => ['posts.destroy', $post->id], 'style' => 'display:inline']) !!}
-				{!! Form::submit('Delete', ['class' => 'btn btn-xs btn-danget']) !!}
+				{!! Form::submit('Delete', ['class' => 'btn btn-xs btn-danger']) !!}
 				{!! Form::close() !!}
 
 
