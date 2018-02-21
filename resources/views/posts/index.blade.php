@@ -6,7 +6,7 @@
 <div class="row">
 	<div class="col-lg-12">
 		<h3>
-			Simple laravel CRUD With Resource Controller
+			Posts Table
 		</h3>
 	</div>
 </div>
@@ -45,10 +45,10 @@
 			<td>{{ $post->title }}</td>
 			<td>{{ $post->body }}</td>
 			<td>
-				<a class="btn btn-xs btn-info" href="{{ url('posts.show'), $post->id }}">Show</a>
-				<a class="btn btn-xs btn-primary" href="{{ url('posts.edit'), $post->id }}">Edit</a>
+				<a class="btn btn-xs btn-info" href="{{ route('posts.show', $post->id) }}">Show</a>
+				<a class="btn btn-xs btn-primary" href="{{ route('posts.edit', $post->id) }}">Edit</a>
 
-				{!! Form::open(['method'=> 'DELETE', 'url' => ['posts.destroy', $post->id], 'style' => 'display:inline']) !!}
+				{!! Form::open(['method'=> 'DELETE', 'route' => ['posts.destroy', $post->id], 'style' => 'display:inline']) !!}
 				{!! Form::submit('Delete', ['class' => 'btn btn-xs btn-danger']) !!}
 				{!! Form::close() !!}
 
